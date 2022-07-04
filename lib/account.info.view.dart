@@ -27,7 +27,7 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('Hive Expense Tracker'),
+          title: const Text('Hive Expense Tracker'),
           centerTitle: true,
         ),
         body: ValueListenableBuilder<Box<AccountInfo>>(
