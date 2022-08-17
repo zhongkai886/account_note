@@ -1,4 +1,4 @@
-# flutter_todo
+# flutter_account_note
 
 A new Flutter project.
 

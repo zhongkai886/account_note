@@ -1,6 +1,6 @@
 {
-    "name": "flutter_todo",
-    "short_name": "flutter_todo",
+    "name": "flutter_account_note",
+    "short_name": "flutter_account_note",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

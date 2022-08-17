@@ -25,38 +25,15 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
       ),
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                child: path != null
-                    ? Image(
-                        image: AssetImage(
-                          path!,
-                        ),
-                        height: MediaQuery.of(context).size.height * 0.5,
-                        width: MediaQuery.of(context).size.width * 0.5,
-                      )
-                    : const Icon(Icons.abc_outlined),
-              ),
-              Container(
-                color: Colors.black38,
-                child: TextButton(
-                    onPressed: () async {
-                      XFile? image =
-                          await _picker.pickImage(source: ImageSource.camera);
-
-                      setState(() {
-                        if (image != null) {
-                          path = image.path;
-                        }
-                      });
-                    },
-                    child: const Text("Image")),
-              )
-            ],
-          ),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+          itemCount: 100,
+          itemBuilder: ((context, index) => Card(
+                color: Colors.amberAccent,
+                child: Center(
+                  child: Text('$index'),
+                ),
+              )),
         ),
       ),
     );

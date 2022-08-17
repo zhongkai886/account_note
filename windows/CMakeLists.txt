@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(flutter_todo LANGUAGES CXX)
+project(flutter_account_note LANGUAGES CXX)
 
-set(BINARY_NAME "flutter_todo")
+set(BINARY_NAME "flutter_account_note")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_todo/model/account.info.dart';
+import 'package:flutter_account_note/model/account.info.dart';
 
 class AccountInfoDialog extends StatefulWidget {
   final AccountInfo? accountInfo;

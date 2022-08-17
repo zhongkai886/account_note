@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_todo/account.info.view.dart';
-import 'package:flutter_todo/image_picker_page.dart';
-import 'package:flutter_todo/model/account.info.dart';
+import 'package:flutter_account_note/account.info.view.dart';
+import 'package:flutter_account_note/image_picker_page.dart';
+import 'package:flutter_account_note/model/account.info.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

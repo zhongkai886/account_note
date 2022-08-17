@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_todo/account_dialog.dart';
-import 'package:flutter_todo/boxes.dart';
-import 'package:flutter_todo/model/account.info.dart';
+import 'package:flutter_account_note/account_dialog.dart';
+import 'package:flutter_account_note/boxes.dart';
+import 'package:flutter_account_note/model/account.info.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 // import 'package:hive_database_example/boxes.dart';
