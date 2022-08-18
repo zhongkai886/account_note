@@ -23,12 +23,24 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
       appBar: AppBar(
         title: const Text('Image Picker'),
       ),
-      body: SizedBox(
+      body: Container(
+        color: Colors.black38,
         width: MediaQuery.of(context).size.width,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(width: double.infinity),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  BackButton(
+                    color: Colors.red,
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                  const Text('ImagePicker FakeTitle'),
+                ],
+              ),
               Container(
                 child: path != null
                     ? Image(
@@ -53,7 +65,7 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
                       });
                     },
                     child: const Text("Image")),
-              )
+              ),
             ],
           ),
         ),
