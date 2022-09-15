@@ -2,6 +2,13 @@ String? name;
 // String age;
 late int height; //需要確保在使用之前會初始化 也就是有內容
 main() {
+  // final const
+  // const a = readThermometer();
+  final b = readThermometer();
+
+  // var c = a * b;
+  // print(c);
+
   // //sample1
   // print(name);
 
@@ -12,7 +19,7 @@ main() {
   // print(name!.length);
 
   // //sample2-2
-  print((name?.length));
+  // print((name?.length));
 
   //sample3
   // height = 173;
@@ -30,6 +37,6 @@ main() {
 
 //sample4
 String readThermometer() {
-  print('test');
-  return '39F';
+  const thermometer = '100F';
+  return thermometer;
 }

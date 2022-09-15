@@ -23,26 +23,34 @@ class _MainViewState extends State<MainView> {
             mainAxisSpacing: 5,
             crossAxisSpacing: 5,
           ),
-          itemCount: 100,
+          itemCount: 10,
           itemBuilder: ((context, index) {
             late String _title;
             switch (index) {
               case 0:
                 _title = MyApp.IMAGEPICKER.replaceFirst('/', '');
                 break;
+              case 1:
+                _title = MyApp.BASIC.replaceFirst('/', '');
+                break;
               default:
                 _title = index.toString();
             }
             return GestureDetector(
               onTap: () {
-                if (index == 0) {
-                  Navigator.pushNamed(context, MyApp.IMAGEPICKER);
+                switch (index) {
+                  case 0:
+                    Navigator.pushNamed(context, MyApp.IMAGEPICKER);
+                    break;
+                  case 1:
+                    Navigator.pushNamed(context, MyApp.BASIC);
+                    break;
                 }
               },
               child: Card(
                 color: Colors.blue[100],
                 child: Center(
-                  child: index == 0 ? Text(_title) : Text('$index'),
+                  child: Text(_title),
                 ),
               ),
             );
