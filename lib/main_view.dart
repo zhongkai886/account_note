@@ -33,6 +33,12 @@ class _MainViewState extends State<MainView> {
               case 1:
                 _title = MyApp.BASIC.replaceFirst('/', '');
                 break;
+              case 2:
+                _title = MyApp.CALLBACK.replaceFirst('/', '');
+                break;
+              case 3:
+                _title = MyApp.SHOP.replaceFirst('/', '');
+                break;
               default:
                 _title = index.toString();
             }
@@ -44,6 +50,12 @@ class _MainViewState extends State<MainView> {
                     break;
                   case 1:
                     Navigator.pushNamed(context, MyApp.BASIC);
+                    break;
+                  case 2:
+                    Navigator.pushNamed(context, MyApp.CALLBACK);
+                    break;
+                  case 3:
+                    Navigator.pushNamed(context, MyApp.SHOP);
                     break;
                 }
               },
