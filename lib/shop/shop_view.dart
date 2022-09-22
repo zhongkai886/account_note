@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_account_note/main.dart';
+import 'package:provider/provider.dart';
 
 class ShopView extends StatefulWidget {
   const ShopView({Key? key}) : super(key: key);
@@ -60,6 +61,40 @@ class _ShopViewState extends State<ShopView> {
           ],
         ),
       ),
+      body: Container(
+        color: Colors.black38,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Consumer<Counter>(
+                  builder: ((context, couter, child) => Text('Count is: ${couter.value}')),
+                ),
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    var counter = context.read<Counter>();
+                    counter.increment();
+                  },
+                  child: const Icon(Icons.add),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
+  }
+}
+
+class Counter with ChangeNotifier {
+  int value = 0;
+
+  void increment() {
+    value += 1;
+    notifyListeners();
   }
 }

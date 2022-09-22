@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         IMAGEPICKER: (context) => const ImagePickerPage(),
         CALLBACK: (context) => const CallBackView(),
         SHOP: (context) => ChangeNotifierProvider(
-              create: (context) => CartModel(),
+              create: (context) => Counter(),
               child: const ShopView(),
             ),
       },
