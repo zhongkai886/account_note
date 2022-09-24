@@ -57,6 +57,9 @@ class _MainViewState extends State<MainView> {
                   case 3:
                     Navigator.pushNamed(context, MyApp.SHOP);
                     break;
+                  case 4:
+                    Navigator.pushNamed(context, MyApp.LOGIN);
+                    break;
                 }
               },
               child: Card(
