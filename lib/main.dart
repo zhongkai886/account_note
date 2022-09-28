@@ -3,6 +3,8 @@ import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:flutter_account_note/account.info.view.dart';
 import 'package:flutter_account_note/basic_view.dart';
+import 'package:flutter_account_note/bloc/counterCubit.dart';
+import 'package:flutter_account_note/bloc/counterPage.dart';
 import 'package:flutter_account_note/callback_view.dart';
 import 'package:flutter_account_note/image_picker_page.dart';
 import 'package:flutter_account_note/main_view.dart';
@@ -13,6 +15,7 @@ import 'package:flutter_account_note/shop/screen/cartVIew.dart';
 import 'package:flutter_account_note/shop/screen/catalogVIew.dart';
 import 'package:flutter_account_note/shop/screen/loginView.dart';
 import 'package:flutter_account_note/shop/shop_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
@@ -36,6 +39,8 @@ class MyApp extends StatelessWidget {
   static const LOGIN = '/login';
   static const CATALOG = '/catalog';
   static const CART = '/cart';
+  static const COUNTER = '/counter';
+  static const TODO = '/todo';
 
   // This widget is the root of your application.
   @override
@@ -68,6 +73,11 @@ class MyApp extends StatelessWidget {
           LOGIN: (context) => const Login(),
           CATALOG: (context) => const Catalog(),
           CART: (context) => const Cart(),
+          COUNTER: (context) => BlocProvider(
+                create: (context) => CounterCubit(),
+                child: const CounterPage(),
+              ),
+          TODO:(context)=> 
         },
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,

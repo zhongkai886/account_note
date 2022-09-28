@@ -11,7 +11,7 @@ class CatalogModel {
     'Noodles',
   ];
 
-  //透過Id找到商品
+  //透過Id轉換成商品
   Item getById(int id) => Item(id, itemNames[id]);
 
   Item getByPosition(int position) {
