@@ -15,6 +15,7 @@ import 'package:flutter_account_note/shop/screen/cartVIew.dart';
 import 'package:flutter_account_note/shop/screen/catalogVIew.dart';
 import 'package:flutter_account_note/shop/screen/loginView.dart';
 import 'package:flutter_account_note/shop/shop_view.dart';
+import 'package:flutter_account_note/todo/blocTodo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
   static const CATALOG = '/catalog';
   static const CART = '/cart';
   static const COUNTER = '/counter';
-  static const TODO = '/todo';
+  static const BLOCTODO = '/todo';
 
   // This widget is the root of your application.
   @override
@@ -77,7 +78,9 @@ class MyApp extends StatelessWidget {
                 create: (context) => CounterCubit(),
                 child: const CounterPage(),
               ),
-          TODO:(context)=> 
+          // BLOCTODO: (context) => BlocBuilder<CounterCubit, int>(
+          //       builder: (context, state) => Text('$state'),
+          //     ),
         },
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,

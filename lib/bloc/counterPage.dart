@@ -13,12 +13,31 @@ class CounterPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Counter Bloc'),
       ),
-      body: BlocBuilder<CounterCubit, int>(
-        builder: (context, state) => Center(
-          child: Text(
-            state.toString(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          BlocBuilder<CounterCubit, int>(
+            buildWhen: (previous, current) {
+              if (previous == current) {
+                return false;
+              }
+              return true;
+            },
+            builder: (context, state) {
+              return Center(
+                child: Text(
+                  state.toString(),
+                ),
+              );
+            },
           ),
-        ),
+          BlocSelector<CounterCubit, int, bool>(
+            selector: (state) {
+              return state.isEven ? true : false;
+            },
+            builder: (context, isEven) => isEven ? Text('偶數') : Text('奇數'),
+          ),
+        ],
       ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
